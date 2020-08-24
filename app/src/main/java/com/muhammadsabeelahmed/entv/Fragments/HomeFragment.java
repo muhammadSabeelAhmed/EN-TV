@@ -1,4 +1,4 @@
-package com.muhammadsabeelahmed.entv;
+package com.muhammadsabeelahmed.entv.Fragments;
 
 import android.graphics.Point;
 import android.os.Bundle;
@@ -13,18 +13,20 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.muhammadsabeelahmed.entv.Global;
+import com.muhammadsabeelahmed.entv.R;
 import com.squareup.picasso.Picasso;
 import com.synnapps.carouselview.CarouselView;
 import com.synnapps.carouselview.ImageClickListener;
 import com.synnapps.carouselview.ImageListener;
 import com.synnapps.carouselview.ViewListener;
 
-public class HomeFragment extends Fragment {
-    int width, height;
+public class HomeFragment extends Fragment implements View.OnClickListener {
     View v;
     CarouselView customCarouselView;
     TextView customCarouselLabel;
     Button pauseButton;
+    ImageView btn_radio, btn_video;
     int[] sampleImages = {R.drawable.logo, R.drawable.logo, R.drawable.logo, R.drawable.logo};
     String[] sampleTitles = {"Orange", "Grapes", "Strawberry", "Cherry"};
     String[] sampleNetworkImageURLs = {
@@ -45,11 +47,10 @@ public class HomeFragment extends Fragment {
     }
 
     private void init() {
-        Display display = getActivity().getWindowManager().getDefaultDisplay();
-        Point size = new Point();
-        display.getSize(size);
-        width = size.x;
-        height = size.y;
+        btn_radio = v.findViewById(R.id.btn_radio);
+        btn_radio.setOnClickListener(this);
+        btn_video = v.findViewById(R.id.btn_video);
+        btn_video.setOnClickListener(this);
         customCarouselView = (CarouselView) v.findViewById(R.id.customCarouselView);
         customCarouselView.setPageCount(4);
         customCarouselView.setSlideInterval(4000);
@@ -66,4 +67,18 @@ public class HomeFragment extends Fragment {
             //imageView.setImageResource(sampleImages[position]);
         }
     };
+
+    @Override
+    public void onClick(View view) {
+        switch (v.getId()) {
+            case R.id.btn_video:
+                Global.changeFragment(v.getContext(),new VideoFragment());
+                getActivity().overridePendingTransition(R.anim.fadein,R.anim.fadeout);
+                break;
+            case R.id.btn_radio:
+                Global.changeFragment(v.getContext(),new RadioFragment());
+                getActivity().overridePendingTransition(R.anim.fadein,R.anim.fadeout);
+                break;
+        }
+    }
 }

@@ -1,9 +1,12 @@
-package com.muhammadsabeelahmed.entv;
+package com.muhammadsabeelahmed.entv.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.os.Handler;
+
+import com.muhammadsabeelahmed.entv.Global;
+import com.muhammadsabeelahmed.entv.R;
 
 public class SplashActivity extends AppCompatActivity {
 
