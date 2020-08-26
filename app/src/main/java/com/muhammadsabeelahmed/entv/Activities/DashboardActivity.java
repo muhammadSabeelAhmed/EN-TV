@@ -16,6 +16,7 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.telephony.gsm.GsmCellLocation;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -28,8 +29,10 @@ import com.leinardi.android.speeddial.SpeedDialActionItem;
 import com.leinardi.android.speeddial.SpeedDialView;
 import com.muhammadsabeelahmed.entv.BuildConfig;
 import com.muhammadsabeelahmed.entv.Fragments.HomeFragment;
+import com.muhammadsabeelahmed.entv.Fragments.VideoFragment;
 import com.muhammadsabeelahmed.entv.Global;
 import com.muhammadsabeelahmed.entv.R;
+
 
 public class DashboardActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     String checkIcon = "true";
@@ -170,5 +173,27 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
         Uri uriUrl = Uri.parse(url);
         Intent launchBrowser = new Intent(Intent.ACTION_VIEW, uriUrl);
         startActivity(launchBrowser);
+    }
+
+    @Override
+    protected void onPause() {
+        Log.d("DashboardActivity", "onPause");
+        FragmentManager fm = getFragmentManager();
+        if (fm.getBackStackEntryCount() > 0) {
+            Log.i("MainActivity", "popping backstack");
+            fm.popBackStack();
+            DashboardActivity.main_text.setText("Home");
+        }
+        super.onPause();
+    }
+
+    @Override
+    protected void onResume() {
+        Log.d("DashboardActivity", "onResume");
+        if (Global.device_back_tag.equals("VideoFragment")) {
+            Global.changeFragmentHome(DashboardActivity.this, new VideoFragment());
+            overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+        }
+        super.onResume();
     }
 }

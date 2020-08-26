@@ -11,7 +11,7 @@
     <com.halilibo.bvpkotlin.BetterVideoPlayer
         android:id="@+id/player"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="match_parent"
         app:bvp_autoFullscreen="true"
         app:bvp_autoPlay="false"
         app:bvp_captionColor="@color/white"
@@ -30,7 +30,7 @@
         android:id="@+id/video_slider"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="visible"
+        android:visibility="gone"
         app:disableAutoPlayOnUserInteraction="true"
         app:fillColor="#FFFFFFFF"
         app:pageColor="#00000000"

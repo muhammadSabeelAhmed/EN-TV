@@ -9,9 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.MediaController;
-import android.widget.VideoView;
 
+import com.halilibo.bvpkotlin.BetterVideoPlayer;
 import com.muhammadsabeelahmed.entv.Activities.DashboardActivity;
 import com.muhammadsabeelahmed.entv.Global;
 import com.muhammadsabeelahmed.entv.R;
@@ -19,11 +18,11 @@ import com.squareup.picasso.Picasso;
 import com.synnapps.carouselview.CarouselView;
 import com.synnapps.carouselview.ImageListener;
 
+
 public class VideoFragment extends Fragment {
     View v;
-    VideoView videoView;
+    BetterVideoPlayer bvp;
     String path1 = "https://5e50264bd6766.streamlock.net/tvchihuahua/videotvchihuahua/playlist.m3u8";
-    ImageView btn_play;
     CarouselView customCarouselView;
     int[] sampleImages = {R.drawable.logo, R.drawable.logo, R.drawable.logo, R.drawable.logo};
     String[] sampleTitles = {"Orange", "Grapes", "Strawberry", "Cherry"};
@@ -46,29 +45,14 @@ public class VideoFragment extends Fragment {
 
     private void init() {
         DashboardActivity.main_text.setText("TV EN LINEA");
-        btn_play = v.findViewById(R.id.btn_play);
-        btn_play.setVisibility(View.VISIBLE);
-        Uri uri = Uri.parse(path1);
-        videoView = (VideoView) v.findViewById(R.id.videoView);
-        MediaController mc = new MediaController(v.getContext());
-        // mc.setAnchorView(videoView);
-        //mc.setMediaPlayer(videoView);
-        Uri video = Uri.parse(path1);
-        // videoView.setMediaController(mc);
-        videoView.setVideoURI(video);
-
-        btn_play.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                videoView.start();
-                btn_play.setVisibility(View.GONE);
-            }
-        });
-
         customCarouselView = (CarouselView) v.findViewById(R.id.video_slider);
         customCarouselView.setPageCount(4);
         customCarouselView.setSlideInterval(4000);
         customCarouselView.setImageListener(imageListener);
+
+        bvp = v.findViewById(R.id.player);
+        bvp.setSource(Uri.parse(path1));
+        bvp.showControls();
 
     }
 
