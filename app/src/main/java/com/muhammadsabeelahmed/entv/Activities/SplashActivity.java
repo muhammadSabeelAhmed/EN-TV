@@ -19,6 +19,7 @@ public class SplashActivity extends AppCompatActivity {
             public void run() {
                 Global.changeActivity(SplashActivity.this, new DashboardActivity());
                 overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+                finish();
             }
         }, 4000);
     }

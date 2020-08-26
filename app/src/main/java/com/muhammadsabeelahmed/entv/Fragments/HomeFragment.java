@@ -12,7 +12,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.muhammadsabeelahmed.entv.Activities.DashboardActivity;
 import com.muhammadsabeelahmed.entv.Global;
 import com.muhammadsabeelahmed.entv.R;
 import com.squareup.picasso.Picasso;
@@ -21,12 +23,10 @@ import com.synnapps.carouselview.ImageClickListener;
 import com.synnapps.carouselview.ImageListener;
 import com.synnapps.carouselview.ViewListener;
 
-public class HomeFragment extends Fragment implements View.OnClickListener {
+public class HomeFragment extends Fragment {
     View v;
-    CarouselView customCarouselView;
-    TextView customCarouselLabel;
-    Button pauseButton;
     ImageView btn_radio, btn_video;
+    CarouselView customCarouselView;
     int[] sampleImages = {R.drawable.logo, R.drawable.logo, R.drawable.logo, R.drawable.logo};
     String[] sampleTitles = {"Orange", "Grapes", "Strawberry", "Cherry"};
     String[] sampleNetworkImageURLs = {
@@ -47,14 +47,29 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     }
 
     private void init() {
-        btn_radio = v.findViewById(R.id.btn_radio);
-        btn_radio.setOnClickListener(this);
-        btn_video = v.findViewById(R.id.btn_video);
-        btn_video.setOnClickListener(this);
+        DashboardActivity.main_text.setText("Home");
         customCarouselView = (CarouselView) v.findViewById(R.id.customCarouselView);
         customCarouselView.setPageCount(4);
         customCarouselView.setSlideInterval(4000);
         customCarouselView.setImageListener(imageListener);
+
+        btn_radio = v.findViewById(R.id.btn_radio);
+        btn_radio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Global.changeFragment(v.getContext(), new RadioFragment());
+                getActivity().overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+            }
+        });
+
+        btn_video = v.findViewById(R.id.btn_video);
+        btn_video.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Global.changeFragment(v.getContext(), new VideoFragment());
+                getActivity().overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+            }
+        });
     }
 
     // To set simple images
@@ -68,17 +83,4 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         }
     };
 
-    @Override
-    public void onClick(View view) {
-        switch (v.getId()) {
-            case R.id.btn_video:
-                Global.changeFragment(v.getContext(),new VideoFragment());
-                getActivity().overridePendingTransition(R.anim.fadein,R.anim.fadeout);
-                break;
-            case R.id.btn_radio:
-                Global.changeFragment(v.getContext(),new RadioFragment());
-                getActivity().overridePendingTransition(R.anim.fadein,R.anim.fadeout);
-                break;
-        }
-    }
 }

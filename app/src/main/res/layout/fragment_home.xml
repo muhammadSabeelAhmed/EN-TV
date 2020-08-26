@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".Fragments.HomeFragment">
 
-
     <com.synnapps.carouselview.CarouselView
         android:id="@+id/customCarouselView"
         android:layout_width="match_parent"
@@ -54,6 +53,5 @@
             android:paddingBottom="12dp"
             android:scaleType="fitStart"
             android:src="@drawable/radio" />
-
     </LinearLayout>
 </RelativeLayout>

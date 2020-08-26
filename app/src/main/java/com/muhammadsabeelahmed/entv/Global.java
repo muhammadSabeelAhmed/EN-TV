@@ -105,11 +105,17 @@ public class Global {
         FragmentTransaction transaction = ((FragmentActivity) context).getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.fadein,
                 R.anim.fadeout);
         transaction.replace(R.id.frame_layout, fragment);
-        if (!device_back_tag.equals("")) {
-            transaction.addToBackStack(device_back_tag);
-        }
+        transaction.addToBackStack(device_back_tag);
         transaction.commit();
     }
+
+    public static void changeFragmentHome(Context context, Fragment fragment) {
+        FragmentTransaction transaction = ((FragmentActivity) context).getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.fadein,
+                R.anim.fadeout);
+        transaction.replace(R.id.frame_layout, fragment);
+        transaction.commit();
+    }
+
 
     public static void savedatatostorage(Context context, String data, String file_name) {
         OutputStreamWriter out = null;

@@ -6,11 +6,11 @@ android {
 
     defaultConfig {
         applicationId "com.muhammadsabeelahmed.entv"
-        minSdkVersion 16
+        minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
-
+        multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -40,7 +40,10 @@ dependencies {
     implementation 'com.synnapps:carouselview:0.1.5'
     //Library for Floating Action Buttons
     implementation "com.leinardi.android:speed-dial:3.1.1"
-    implementation 'com.github.leinardi:FloatingActionButtonSpeedDial:master-SNAPSHOT'
+ //     implementation 'com.github.leinardi:FloatingActionButtonSpeedDial:master-SNAPSHOT'
 
+    implementation 'com.devbrackets.android:exomedia:4.3.0' //TV
+    implementation 'com.google.android.exoplayer:exoplayer:2.9.6' //TV & Radio
+    implementation 'com.cleveroad:audiovisualization:1.0.1' //Radio
 
 }
