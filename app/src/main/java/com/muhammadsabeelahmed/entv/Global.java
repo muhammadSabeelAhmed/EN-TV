@@ -27,7 +27,8 @@ public class Global {
     public static String appFontNameLIGHT = "Roboto-Light.ttf";
     public static String appFontNameREGULAR = "Roboto-Regular.ttf";
     public static String device_back_tag = "";
-
+    public static boolean started = false;
+    public static boolean prepared = false;
     public static void SetView(Context mContext, android.widget.Button selectedView, boolean isBold) {
         if (useFontFotViews) {
             String fontName = Global.appFontNameLIGHT;

@@ -24,7 +24,7 @@ public class VideoFragment extends Fragment {
     BetterVideoPlayer bvp;
     String path1 = "https://5e50264bd6766.streamlock.net/tvchihuahua/videotvchihuahua/playlist.m3u8";
     CarouselView customCarouselView;
-    int[] sampleImages = {R.drawable.logo, R.drawable.logo, R.drawable.logo, R.drawable.logo};
+    int[] sampleImages = {R.drawable.new_logo, R.drawable.new_logo, R.drawable.new_logo, R.drawable.new_logo};
     String[] sampleTitles = {"Orange", "Grapes", "Strawberry", "Cherry"};
     String[] sampleNetworkImageURLs = {
             "https://conceptoweb-studio.com/apps/radiogm/ios/images/imgs-09-4.png",

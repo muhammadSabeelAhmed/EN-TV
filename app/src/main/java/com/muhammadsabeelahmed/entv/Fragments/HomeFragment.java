@@ -27,7 +27,7 @@ public class HomeFragment extends Fragment {
     View v;
     ImageView btn_radio, btn_video;
     CarouselView customCarouselView;
-    int[] sampleImages = {R.drawable.logo, R.drawable.logo, R.drawable.logo, R.drawable.logo};
+    int[] sampleImages = {R.drawable.new_logo, R.drawable.new_logo, R.drawable.new_logo, R.drawable.new_logo};
     String[] sampleTitles = {"Orange", "Grapes", "Strawberry", "Cherry"};
     String[] sampleNetworkImageURLs = {
             "https://conceptoweb-studio.com/apps/radiogm/ios/images/imgs-09-4.png",
