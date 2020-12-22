@@ -3,8 +3,6 @@ Design and develoepd by Muhammad Sabeel Ahmed
 
 This aplication required internet permissions only containing connectivity with broadcast servers for TV & Radio as well.
 
-# MuhammadSabeelAhmed
-
 ## Questions
 
 Hit me on Stackoverflow [![Stackoverflow](https://img.shields.io/badge/Stackoverflow-@muhammad_sabeel_ahmed-black.svg?style=flat)](https://stackoverflow.com/users/11824674/muhammad-sabeel-ahmed)
@@ -16,4 +14,6 @@ Hit me on Instagram [![Instagram](https://img.shields.io/badge/Instagram-@muhama
 Hit me on Facebook [![Facebook](https://img.shields.io/badge/Facebook-@muhammad_sabeel_ahmed-blue.svg?style=flat)](https://www.facebook.com/muhammadsabeel.ahmed)
 
 Hit me on Pinterest [![Pinterest](https://img.shields.io/badge/Pinterest-@muhammad_sabeel_ahmed-red.svg?style=flat)](https://www.pinterest.com/muhammad_sabeel_ahmed/)
+
+### MuhammadSabeelAhmed
 
