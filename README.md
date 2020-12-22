@@ -1,7 +1,7 @@
 # EN-TV
 Design and develoepd by Muhammad Sabeel Ahmed
 
-This aplication required internet permissions only.
+This aplication required internet permissions only containing connectivity with broadcast servers for TV & Radio as well.
 
 ## Questions
 
